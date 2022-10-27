@@ -15,7 +15,7 @@ namespace OnlineTestWithMongoDB.API.Controllers
         [HttpGet]
         public async Task<List<Questions>> Get() => await _questionService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Questions>> Get(int id)
         {
             var question = await _questionService.GetAsync(id);
